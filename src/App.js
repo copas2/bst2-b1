@@ -5,6 +5,7 @@ import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import cellEditFactory from 'react-bootstrap-table2-editor';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
+import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 
 export default class App extends Component {
   render() {
@@ -14,7 +15,7 @@ export default class App extends Component {
           keyField="id"
           columns={ [
             { dataField: 'id', text: 'ID'}, 
-            { dataField: 'name', text: 'Name'}
+            { dataField: 'name', text: 'Name', filter: textFilter()}
           ] }
           data={ [
             {id:1, name: "one"},
@@ -28,7 +29,8 @@ export default class App extends Component {
           pagination={ paginationFactory({
             sizePerPage: 5,
             totalSize: 6,
-          }) }  
+          }) }
+          filter={ filterFactory() }  
         />
       </div>
     );
