@@ -28,7 +28,6 @@ export default class App extends Component {
           cellEdit={ cellEditFactory({ mode: 'click' }) }
           pagination={ paginationFactory({
             sizePerPage: 5,
-            totalSize: 6,
           }) }
           filter={ filterFactory() }  
         />
